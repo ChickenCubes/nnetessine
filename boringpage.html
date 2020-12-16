@@ -1,64 +1,34 @@
-<!DOCTYPE HTML><html>    <head>        <style>            *{                color: red;            }        </style>    </head>    <body>    <a href="https://chickencubes.github.io/nnetessine/">
-  Go to heading #5 (not a trick)
-</a>
-<div>
-  <h2 id="heading1">
-    Heading #1
-  </h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia dolor quis congue imperdiet. Aliquam varius erat a ipsum egestas placerat. Curabitur sit amet augue nec erat scelerisque auctor. Quisque vel diam eget ex consectetur egestas nec non lorem. Sed tempus quam ac risus fringilla lacinia. Ut semper nulla tortor, facilisis malesuada libero venenatis eget. Quisque ullamcorper dapibus tortor. Duis massa nisi, interdum sit amet sem a, finibus posuere nisl. Morbi pharetra eget nisl id molestie. Vestibulum aliquam lectus velit, in porta augue semper sit amet. Quisque eget eros sed dui condimentum molestie eget at dolor. Fusce dignissim, nunc vitae tristique lobortis, est orci suscipit magna, id hendrerit odio magna id neque. Proin velit neque, pretium a neque eu, interdum lacinia libero. Suspendisse in erat quis justo sagittis vehicula nec sed purus. Nunc vestibulum convallis erat lobortis tincidunt.
+<!DOCTYPE HTML>
+<html>
+  <script>
+  const svg=d3
+  .select("body")
+  .append("svg")
+  .attr("id","move")
 
-Sed id arcu in sem feugiat condimentum quis vitae leo. Phasellus tristique odio nec purus sagittis feugiat. Quisque vehicula porttitor urna, vitae sollicitudin leo dictum at. Etiam pretium volutpat vulputate. Pellentesque sed justo sapien. Etiam dolor sem, tincidunt et tortor at, dictum pretium velit. Duis posuere ultricies risus, non luctus ligula eleifend in. Etiam faucibus ante nulla, non euismod urna maximus eget. Sed ut eros dictum, gravida sem vitae, suscipit eros. Fusce nec laoreet ligula. Nam vel porta velit. Donec non interdum tortor, et eleifend neque.
+const BLOCK_SIZE=50;
+function drawSquareColor(color, g, h, degrees = 0) {
+  svg
+    .append("rect")
+    .attr("fill", color)
+    .attr("x", g)
+    .attr("y", h)
+    .attr("width", BLOCK_SIZE)
+    .attr("height", BLOCK_SIZE)
+}
 
-Integer mi nunc, consequat eget pulvinar quis, sollicitudin non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dignissim turpis metus, at sodales ligula eleifend eu. Nunc in ultrices nulla. Curabitur sit amet quam ultricies, facilisis elit eget, efficitur justo. Pellentesque sodales est lectus, nec tincidunt velit efficitur sit amet. Integer tellus metus, lacinia non varius sit amet, ullamcorper sed diam. Fusce dui urna, ornare in pulvinar sed, rhoncus eu arcu. Nulla id urna a justo sollicitudin porttitor a sit amet nunc. Cras tincidunt, velit in fringilla vehicula, est lacus tristique mi, a ullamcorper lorem neque vel metus. Praesent ac augue vel lacus dapibus venenatis in at odio.
-  </p>
-</div>
-<div>
-  <h2 id="heading2">
-    Heading #2
-  </h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia dolor quis congue imperdiet. Aliquam varius erat a ipsum egestas placerat. Curabitur sit amet augue nec erat scelerisque auctor. Quisque vel diam eget ex consectetur egestas nec non lorem. Sed tempus quam ac risus fringilla lacinia. Ut semper nulla tortor, facilisis malesuada libero venenatis eget. Quisque ullamcorper dapibus tortor. Duis massa nisi, interdum sit amet sem a, finibus posuere nisl. Morbi pharetra eget nisl id molestie. Vestibulum aliquam lectus velit, in porta augue semper sit amet. Quisque eget eros sed dui condimentum molestie eget at dolor. Fusce dignissim, nunc vitae tristique lobortis, est orci suscipit magna, id hendrerit odio magna id neque. Proin velit neque, pretium a neque eu, interdum lacinia libero. Suspendisse in erat quis justo sagittis vehicula nec sed purus. Nunc vestibulum convallis erat lobortis tincidunt.
+const square = drawSquareColor("black",100,100,0);
 
-Sed id arcu in sem feugiat condimentum quis vitae leo. Phasellus tristique odio nec purus sagittis feugiat. Quisque vehicula porttitor urna, vitae sollicitudin leo dictum at. Etiam pretium volutpat vulputate. Pellentesque sed justo sapien. Etiam dolor sem, tincidunt et tortor at, dictum pretium velit. Duis posuere ultricies risus, non luctus ligula eleifend in. Etiam faucibus ante nulla, non euismod urna maximus eget. Sed ut eros dictum, gravida sem vitae, suscipit eros. Fusce nec laoreet ligula. Nam vel porta velit. Donec non interdum tortor, et eleifend neque.
-
-Integer mi nunc, consequat eget pulvinar quis, sollicitudin non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dignissim turpis metus, at sodales ligula eleifend eu. Nunc in ultrices nulla. Curabitur sit amet quam ultricies, facilisis elit eget, efficitur justo. Pellentesque sodales est lectus, nec tincidunt velit efficitur sit amet. Integer tellus metus, lacinia non varius sit amet, ullamcorper sed diam. Fusce dui urna, ornare in pulvinar sed, rhoncus eu arcu. Nulla id urna a justo sollicitudin porttitor a sit amet nunc. Cras tincidunt, velit in fringilla vehicula, est lacus tristique mi, a ullamcorper lorem neque vel metus. Praesent ac augue vel lacus dapibus venenatis in at odio.
-  </p>
-</div>
-<div>
-  <h2 id="heading3">
-    Heading #3
-  </h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia dolor quis congue imperdiet. Aliquam varius erat a ipsum egestas placerat. Curabitur sit amet augue nec erat scelerisque auctor. Quisque vel diam eget ex consectetur egestas nec non lorem. Sed tempus quam ac risus fringilla lacinia. Ut semper nulla tortor, facilisis malesuada libero venenatis eget. Quisque ullamcorper dapibus tortor. Duis massa nisi, interdum sit amet sem a, finibus posuere nisl. Morbi pharetra eget nisl id molestie. Vestibulum aliquam lectus velit, in porta augue semper sit amet. Quisque eget eros sed dui condimentum molestie eget at dolor. Fusce dignissim, nunc vitae tristique lobortis, est orci suscipit magna, id hendrerit odio magna id neque. Proin velit neque, pretium a neque eu, interdum lacinia libero. Suspendisse in erat quis justo sagittis vehicula nec sed purus. Nunc vestibulum convallis erat lobortis tincidunt.
-
-Sed id arcu in sem feugiat condimentum quis vitae leo. Phasellus tristique odio nec purus sagittis feugiat. Quisque vehicula porttitor urna, vitae sollicitudin leo dictum at. Etiam pretium volutpat vulputate. Pellentesque sed justo sapien. Etiam dolor sem, tincidunt et tortor at, dictum pretium velit. Duis posuere ultricies risus, non luctus ligula eleifend in. Etiam faucibus ante nulla, non euismod urna maximus eget. Sed ut eros dictum, gravida sem vitae, suscipit eros. Fusce nec laoreet ligula. Nam vel porta velit. Donec non interdum tortor, et eleifend neque.
-
-Integer mi nunc, consequat eget pulvinar quis, sollicitudin non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dignissim turpis metus, at sodales ligula eleifend eu. Nunc in ultrices nulla. Curabitur sit amet quam ultricies, facilisis elit eget, efficitur justo. Pellentesque sodales est lectus, nec tincidunt velit efficitur sit amet. Integer tellus metus, lacinia non varius sit amet, ullamcorper sed diam. Fusce dui urna, ornare in pulvinar sed, rhoncus eu arcu. Nulla id urna a justo sollicitudin porttitor a sit amet nunc. Cras tincidunt, velit in fringilla vehicula, est lacus tristique mi, a ullamcorper lorem neque vel metus. Praesent ac augue vel lacus dapibus venenatis in at odio.
-  </p>
-</div>
-<div>
-  <h2 id="heading4">
-    Heading #4
-  </h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia dolor quis congue imperdiet. Aliquam varius erat a ipsum egestas placerat. Curabitur sit amet augue nec erat scelerisque auctor. Quisque vel diam eget ex consectetur egestas nec non lorem. Sed tempus quam ac risus fringilla lacinia. Ut semper nulla tortor, facilisis malesuada libero venenatis eget. Quisque ullamcorper dapibus tortor. Duis massa nisi, interdum sit amet sem a, finibus posuere nisl. Morbi pharetra eget nisl id molestie. Vestibulum aliquam lectus velit, in porta augue semper sit amet. Quisque eget eros sed dui condimentum molestie eget at dolor. Fusce dignissim, nunc vitae tristique lobortis, est orci suscipit magna, id hendrerit odio magna id neque. Proin velit neque, pretium a neque eu, interdum lacinia libero. Suspendisse in erat quis justo sagittis vehicula nec sed purus. Nunc vestibulum convallis erat lobortis tincidunt.
-
-Sed id arcu in sem feugiat condimentum quis vitae leo. Phasellus tristique odio nec purus sagittis feugiat. Quisque vehicula porttitor urna, vitae sollicitudin leo dictum at. Etiam pretium volutpat vulputate. Pellentesque sed justo sapien. Etiam dolor sem, tincidunt et tortor at, dictum pretium velit. Duis posuere ultricies risus, non luctus ligula eleifend in. Etiam faucibus ante nulla, non euismod urna maximus eget. Sed ut eros dictum, gravida sem vitae, suscipit eros. Fusce nec laoreet ligula. Nam vel porta velit. Donec non interdum tortor, et eleifend neque.
-
-Integer mi nunc, consequat eget pulvinar quis, sollicitudin non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dignissim turpis metus, at sodales ligula eleifend eu. Nunc in ultrices nulla. Curabitur sit amet quam ultricies, facilisis elit eget, efficitur justo. Pellentesque sodales est lectus, nec tincidunt velit efficitur sit amet. Integer tellus metus, lacinia non varius sit amet, ullamcorper sed diam. Fusce dui urna, ornare in pulvinar sed, rhoncus eu arcu. Nulla id urna a justo sollicitudin porttitor a sit amet nunc. Cras tincidunt, velit in fringilla vehicula, est lacus tristique mi, a ullamcorper lorem neque vel metus. Praesent ac augue vel lacus dapibus venenatis in at odio.
-  </p>
-</div>
-<div>
-  <h2 id="heading5">
-    Heading #5
-  </h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia dolor quis congue imperdiet. Aliquam varius erat a ipsum egestas placerat. Curabitur sit amet augue nec erat scelerisque auctor. Quisque vel diam eget ex consectetur egestas nec non lorem. Sed tempus quam ac risus fringilla lacinia. Ut semper nulla tortor, facilisis malesuada libero venenatis eget. Quisque ullamcorper dapibus tortor. Duis massa nisi, interdum sit amet sem a, finibus posuere nisl. Morbi pharetra eget nisl id molestie. Vestibulum aliquam lectus velit, in porta augue semper sit amet. Quisque eget eros sed dui condimentum molestie eget at dolor. Fusce dignissim, nunc vitae tristique lobortis, est orci suscipit magna, id hendrerit odio magna id neque. Proin velit neque, pretium a neque eu, interdum lacinia libero. Suspendisse in erat quis justo sagittis vehicula nec sed purus. Nunc vestibulum convallis erat lobortis tincidunt.
-
-Sed id arcu in sem feugiat condimentum quis vitae leo. Phasellus tristique odio nec purus sagittis feugiat. Quisque vehicula porttitor urna, vitae sollicitudin leo dictum at. Etiam pretium volutpat vulputate. Pellentesque sed justo sapien. Etiam dolor sem, tincidunt et tortor at, dictum pretium velit. Duis posuere ultricies risus, non luctus ligula eleifend in. Etiam faucibus ante nulla, non euismod urna maximus eget. Sed ut eros dictum, gravida sem vitae, suscipit eros. Fusce nec laoreet ligula. Nam vel porta velit. Donec non interdum tortor, et eleifend neque.
-
-Integer mi nunc, consequat eget pulvinar quis, sollicitudin non nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce dignissim turpis metus, at sodales ligula eleifend eu. Nunc in ultrices nulla. Curabitur sit amet quam ultricies, facilisis elit eget, efficitur justo. Pellentesque sodales est lectus, nec tincidunt velit efficitur sit amet. Integer tellus metus, lacinia non varius sit amet, ullamcorper sed diam. Fusce dui urna, ornare in pulvinar sed, rhoncus eu arcu. Nulla id urna a justo sollicitudin porttitor a sit amet nunc. Cras tincidunt, velit in fringilla vehicula, est lacus tristique mi, a ullamcorper lorem neque vel metus. Praesent ac augue vel lacus dapibus venenatis in at odio.
-  </p>
-</div>
-    </body></html>
+document.getElementById("move").onclick = function (e) {
+    let rect = e.target.getBoundingClientRect();
+    let X = e.clientX - rect.left;
+    let Y = e.clientY - rect.top;
+    console.log(X, Y, square);
+  
+    square.transition()
+      .duration(200)
+      .attr("x",X)
+      .attr("y",Y)
+};
+  </script>
+</html>
