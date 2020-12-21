@@ -1,46 +1,61 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <style>
-           
-div{
-  margin-right: 0%;
-  font-size: 48px;
-}
-div span{
-  color: red;
-  font-size: 52px;
-  font-family: Helvetica;
-  margin-right: 2%;
-}
-img{
-  float: right;
-  margin-left: 0%;
-  width: 400px;
-}
-a{
- width:50px;
- height:50px;
- background-color: blue;
- color: red;
- padding:1%;
- text-decoration: none;
- border-radius: 2px;
-}
-a:hover{
-  background-color: red;
-  color: blue;
-}
- </style>
-    </head>       
+    </head>
     <body>
-        <a href="/nnetessine/boringpage.html">
-            Next Page
-</a>
-  <div>The Life of <span>NICK</span></div>
-<img src="https://pbs.twimg.com/profile_images/523355359843340289/IPVwD5Rt_400x400.jpeg"/>
-  <div>
-    <ol>You have reached the home page. Press this button at the top left of the page to continue.</ol>
-    </div>
+    <script> 
+ const svg=d3
+  .select("body")
+  .append("svg")
+  .attr("width",1000)
+  .attr("height",1000)
+  .attr("id","move")
+
+const BLOCK_SIZE=50;
+function drawSquareColor(color, g, h, w, h) {
+  return svg
+    .append("rect")
+    .attr("fill", color)
+    .attr("x", g)
+    .attr("y", h)
+    .attr("width", w)
+    .attr("height", h)
+}
+
+let character = drawSquareColor("blue",0,0,50,50);
+         
+
+document.getElementById("move").onclick = function (e) {
+    let rect = e.target.getBoundingClientRect();
+    let X = e.clientX - rect.left;
+    let Y = e.clientY - rect.top;
+
+  
+    character.transition()
+      .duration(750)
+      .attr("x",X)
+      .attr("y",Y)
+      .on("end",function(){
+      if(X<TARGET_X+100 && X>TARGET_X-100 && Y<TARGET_Y+100 && Y>TARGET_Y-100){
+        alert("You Win!")
+      }
+    })
+}
+
+
+function rand(){
+    return {
+        x: Math.ceil(Math.random()*1000),
+        y: Math.ceil(Math.random()*1000)
+    }
+}
+let COORD = rand();
+let TARGET_X = COORD.x;
+let TARGET_Y = COORD.y;
+let TARGET_WIDTH= 100;
+let TARGET_HEIGHT= 100;
+
+drawSquareColor("red",TARGET_X,TARGET_Y,TARGET_WIDTH,TARGET_HEIGHT);
+</script>
     </body>
 </html>
